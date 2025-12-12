@@ -19,7 +19,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from pages.login_page import LoginPage
 from utils.password_validator import is_strong_password
 from utils.assertions import (assert_text_contains, assert_element_visible, assert_url_contains)
-from utilities.custom_logger import custom_logger
+from utils.custom_logger import custom_logger
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
