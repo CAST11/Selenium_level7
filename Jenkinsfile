@@ -19,7 +19,7 @@ pipeline {
                     python3 -m venv venv
 					
 					echo "Activating virtualenv"
-                    source venv/bin/activate
+                    . venv/bin/activate
 					
 					echo "Upgrading pip"
                     pip install --upgrade pip
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh """
 					echo "Activating virtualenv"
-                    source venv/bin/activate
+                    . venv/bin/activate
                     pytest --html=report.html --self-contained-html
                 """
             }
