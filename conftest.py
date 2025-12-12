@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import os
-import datetime import datetime
+import datetime
 
 @pytest.fixture()
 def setup(request):
