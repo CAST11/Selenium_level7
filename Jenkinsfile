@@ -18,6 +18,12 @@ pipeline {
 					echo "Creating virtual env"
                     python3 -m venv venv
 					
+					echo "Activating virtualenv"
+                    source venv/bin/activate
+					
+					echo "Upgrading pip"
+                    pip install --upgrade pip
+					
                     echo "Installing requirements"
                     pip install -r requirements.txt
                 """
