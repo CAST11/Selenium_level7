@@ -44,13 +44,13 @@ pipeline {
     post {
         always {
 			echo 'Pipeline finished'
-            publishHTML([[
-                allowMissing: false,
-                keepAll: true,
-                reportDir: '.',
-                reportFiles: 'report.html',
-                reportName: 'Pytest HTML Report'
-            ]])
+            publishHTML(target: [
+    reportDir: 'reports/html',
+    reportFiles: 'report.html',
+    reportName: 'Automation Test Report',
+    keepAll: true,
+    alwaysLinkToLastBuild: true,
+    allowMissing: false)
         }
 		failure {
             echo 'Tests failed!'
