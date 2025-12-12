@@ -1,0 +1,33 @@
+2025-12-11 14:13:30,629 - selenium_automation - INFO - Loading login page
+2025-12-11 14:13:30,693 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 14:13:30,985 - selenium_automation - INFO - Clicking Login button
+2025-12-11 14:13:40,527 - selenium_automation - INFO - Loading login page
+2025-12-11 14:13:40,604 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 14:13:40,955 - selenium_automation - INFO - Clicking Login button
+2025-12-11 14:13:50,435 - selenium_automation - INFO - Loading login page
+2025-12-11 14:13:50,486 - selenium_automation - INFO - Entering username: WrongUser
+2025-12-11 14:13:50,772 - selenium_automation - INFO - Clicking Login button
+2025-12-11 14:33:34,673 - selenium_automation - INFO - Loading login page
+2025-12-11 14:33:34,728 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 14:33:35,028 - selenium_automation - INFO - Clicking Login button
+2025-12-11 14:33:44,507 - selenium_automation - INFO - Loading login page
+2025-12-11 14:33:44,558 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 14:33:44,640 - selenium_automation - INFO - Clicking Login button
+2025-12-11 14:33:54,931 - selenium_automation - INFO - Loading login page
+2025-12-11 14:33:54,981 - selenium_automation - INFO - Entering username: WrongUser
+2025-12-11 14:33:55,287 - selenium_automation - INFO - Clicking Login button
+2025-12-11 17:00:18,065 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 17:00:18,375 - selenium_automation - INFO - Clicking Login button
+2025-12-11 17:00:23,588 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 17:00:23,679 - selenium_automation - INFO - Clicking Login button
+2025-12-11 17:00:28,962 - selenium_automation - INFO - Entering username: WrongUser
+2025-12-11 17:00:29,236 - selenium_automation - INFO - Clicking Login button
+2025-12-11 17:03:45,648 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 17:03:45,717 - selenium_automation - INFO - Entering password
+2025-12-11 17:03:45,779 - selenium_automation - INFO - Clicking Login button
+2025-12-11 17:03:51,192 - selenium_automation - INFO - Entering username: tomsmith
+2025-12-11 17:03:51,249 - selenium_automation - INFO - Entering password
+2025-12-11 17:03:51,294 - selenium_automation - INFO - Clicking Login button
+2025-12-11 17:03:56,434 - selenium_automation - INFO - Entering username: WrongUser
+2025-12-11 17:03:56,497 - selenium_automation - INFO - Entering password
+2025-12-11 17:03:56,549 - selenium_automation - INFO - Clicking Login button
