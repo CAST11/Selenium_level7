@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'msater',
+                git branch: 'master',
                     url: 'https://github.com/CAST11/Selenium_level7'
             }
         }
