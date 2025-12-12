@@ -1,37 +1,22 @@
 pipeline {
     agent any
 
-    environment {
-        PYTHONUNBUFFERED = '1'
-    }
-
     stages {
-
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
+        stage('Install dependencies') {
             steps {
                 sh '''
                     python3 -m venv venv
                     . venv/bin/activate
-                    pip install --upgrade pip
                     pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('Run Tests') {
+        stage('Run tests') {
             steps {
                 sh '''
                     . venv/bin/activate
-                    pytest \
-                      --html=reports/html/report.html \
-                      --self-contained-html \
-                      -v
+                    pytest --html=reports/html/report.html --self-contained-html
                 '''
             }
         }
@@ -39,20 +24,14 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline finished'
-
-            publishHTML([
-                target: [
-                    [
-                        reportDir: 'reports/html',
-                        reportFiles: 'report.html',
-                        reportName: 'Pytest HTML Report',
-                        allowMissing: false,
-                        keepAll: true,
-                        alwaysLinkToLastBuild: true
-                    ]
-                ]
-            ])
+            publishHTML(
+                reportDir: 'reports/html',
+                reportFiles: 'report.html',
+                reportName: 'Pytest HTML Report',
+                allowMissing: false,
+                keepAll: true,
+                alwaysLinkToLastBuild: true
+            )
         }
     }
 }
