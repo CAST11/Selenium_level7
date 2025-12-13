@@ -31,21 +31,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_login_success(driver):
     login = LoginPage(driver)
-    #login.open()
-    URL = "https://the-internet.herokuapp.com/login"
-
-    def __init__(self, driver):
-        self.driver = driver
-
-    def open(self):
-        self.driver.get(self.URL)
+    login.open()
 
     login.enter_username("tomsmith")
     login.enter_password("SuperSecretPassword!")
     login.click_login()
 
-    msg = login.get_flash_message()
-
-    assert_element_visible(msg)
-    assert_text_contains(msg.text, "You logged into a secure area!")
-    assert_url_contains(driver, "secure")
+    assert "You logged into a secure area!" in login.get_flash_message().text

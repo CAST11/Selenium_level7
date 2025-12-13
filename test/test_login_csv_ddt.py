@@ -1,12 +1,6 @@
 import pytest
-import os
 from pages.login_page import LoginPage
-from utils.csv_utils import load_csv_data
 
-CSV_PATH = os.path.join(os.path.dirname(__file__), "..", "testdata", "login_data.csv")
-data = load_csv_data(CSV_PATH)
-
-@pytest.mark.usefixtures("setup")
 class TestLoginCSVDDT:
 
     @pytest.mark.parametrize("row", data)
