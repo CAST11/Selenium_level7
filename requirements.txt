@@ -1,5 +1,4 @@
 pytest
 pytest-html
-selenium
-webdriver_manager
+selenium>=4.20.0
 openpyxl
