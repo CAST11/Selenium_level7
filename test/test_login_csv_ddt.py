@@ -13,9 +13,9 @@ class TestLoginCSVDDT:
         password = row[1]
         expected = row[2]
 
-        login_page = LoginPage(driver)
-        login_page.open()
+        driver.get("https://the-internet.herokuapp.com/login")
 
+        login_page = LoginPage(driver)
         login_page.enter_username(username)
         login_page.enter_password(password)
         login_page.click_login()
