@@ -7,7 +7,7 @@ import os
 import datetime
 
 @pytest.fixture()
-def setup():
+def driver():
     options = Options()
     options.binary_location = "/usr/bin/google-chrome"
 
