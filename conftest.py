@@ -7,20 +7,20 @@ import os
 import datetime
 
 @pytest.fixture()
-def setup(request):
-    # Headless setup
+def setup():
     options = Options()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Chrome(options=options)
-    #driver.maximize_window()
-    #driver.set_window_size(1920, 1080)
-    #request.cls.driver = driver
-    #yield
-    
+    # 👇 THIS IS CRITICAL
+    options.binary_location = "/usr/bin/google-chrome"
+
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+
+    yield driver
     driver.quit()
 
 # ----------------- Capture Screenshots on Test Failure -----------------
