@@ -31,7 +31,14 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_login_success(driver):
     login = LoginPage(driver)
-    login.open()
+    #login.open()
+    URL = "https://the-internet.herokuapp.com/login"
+
+    def __init__(self, driver):
+        self.driver = driver
+
+    def open(self):
+        self.driver.get(self.URL)
 
     login.enter_username("tomsmith")
     login.enter_password("SuperSecretPassword!")

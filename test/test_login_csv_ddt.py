@@ -10,18 +10,12 @@ data = load_csv_data(CSV_PATH)
 class TestLoginCSVDDT:
 
     @pytest.mark.parametrize("row", data)
-    def test_login_csv(self, row):
-        # ⭐ IMPORTANT: OPEN THE LOGIN PAGE
-        self.driver.get("https://the-internet.herokuapp.com/login")
+    def test_login_csv(self, driver, row):
+        login = LoginPage(driver)
+        login.open()
 
-        login = LoginPage(self.driver)
-
-        username = row["username"]
-        password = row["password"]
-        expected_text = row["expected"]
-
-        login.enter_username(username)
-        login.enter_password(password)
+        login.enter_username(row["username"])
+        login.enter_password(row["password"])
         login.click_login()
 
-        assert expected_text in login.get_message()
+        assert row["expected"] in login.get_flash_message().text

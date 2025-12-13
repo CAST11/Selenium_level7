@@ -1,6 +1,6 @@
 import pytest
 
-import pytest
+from pages.login_page import LoginPage
 
 test_data = [
     ("tomsmith", "SuperSecretPassword!", "You logged into a secure area!"),
