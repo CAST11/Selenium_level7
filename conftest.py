@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture
-def setup(request):
+def driver():
     options = Options()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
@@ -13,6 +13,5 @@ def setup(request):
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
 
-    request.cls.driver = driver
-    yield
+    yield driver
     driver.quit()
