@@ -1,18 +1,23 @@
 import pytest
 
+import pytest
+
+test_data = [
+    ("tomsmith", "SuperSecretPassword!", "You logged into a secure area!"),
+    ("WrongUser", "SuperSecretPassword!", "Your username is invalid!"),
+    ("tomsmith", "WrongPass", "Your password is invalid!")
+]
+
 @pytest.mark.parametrize("username,password,expected", test_data)
 def test_login_data_driven(driver, username, password, expected):
-    # driver comes from conftest.py fixture
-
+    driver.get("https://the-internet.herokuapp.com/login")
     login_page = LoginPage(driver)
-
-    login_page.open()   # this should call driver.get()
 
     login_page.enter_username(username)
     login_page.enter_password(password)
     login_page.click_login()
 
     flash = login_page.get_flash_message()
+    assert flash.is_displayed()
+    assert expected in flash.text
 
-    assert_element_visible(flash)
-    assert_text_contains(flash.text, expected)
